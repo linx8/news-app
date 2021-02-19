@@ -16,4 +16,15 @@ const searchArticles = async (keywords) => {
     });
 };
 
+const searchMultipleArticles = async (sources) => {
+  const articles = await Promise.all(
+    sources.map((source) => fetch(source).then((response) => response.json()))
+  );
+
+  console.log(articles);
+
+  return articles;
+};
+
 exports.searchArticles = searchArticles;
+exports.searchMultipleArticles = searchMultipleArticles;

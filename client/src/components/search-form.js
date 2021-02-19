@@ -1,3 +1,5 @@
+import React from "react";
+
 const SearchForm = ({ onSubmit }) => (
   <form onSubmit={onSubmit}>
     <input name="keywords" type="text" placeholder="search" />
