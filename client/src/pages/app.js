@@ -11,6 +11,7 @@ function App() {
     e.preventDefault();
     const searchTerms = e.target.keywords.value;
     const response = await searchArticles(searchTerms);
+    console.log(response);
     response && updateResults(response.results);
   };
 

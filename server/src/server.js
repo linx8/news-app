@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/api/news-search", async (req, res) => {
-  const response = await api.searchArticles(req.query.q);
+  const response = await api.searchMultipleArticles(req.query.q);
   res.send(response);
 });
 

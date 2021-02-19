@@ -1,8 +1,12 @@
-
-const aggregateArticles = (articles, newArticles) {
-  const newArticles = articles.slice(0);
+const aggregateArticles = (results) => {
+  // const results = results.slice(0);
   // do something with the articles
-  return newArticles;
-}
+
+  const responses = results.map((result) => result.response);
+
+  console.log(responses);
+
+  return responses;
+};
 
 exports.aggregateArticles = aggregateArticles;

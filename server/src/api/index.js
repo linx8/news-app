@@ -1,5 +1,5 @@
 const fetch = require("node-fetch");
-
+const utils = require("../utils");
 const sources = [
   "https://content.guardianapis.com/search?api-key=34e2d533-999b-41f6-b4d5-477a890eb839&q=",
 ];
@@ -16,12 +16,14 @@ const searchArticles = async (keywords) => {
     });
 };
 
-const searchMultipleArticles = async (sources) => {
-  const articles = await Promise.all(
-    sources.map((source) => fetch(source).then((response) => response.json()))
+const searchMultipleArticles = async (keywords) => {
+  const combinedResponse = await Promise.all(
+    sources.map((source) =>
+      fetch(`${sources[0]}${keywords}`).then((response) => response.json())
+    )
   );
 
-  console.log(articles);
+  const articles = utils.aggregateArticles(combinedResponse);
 
   return articles;
 };
