@@ -1,0 +1,16 @@
+.app {
+  padding-top: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+}
+
+button {
+  border: 1px solid #000000;
+  background: transparent;
+  padding: 10px;
+}
