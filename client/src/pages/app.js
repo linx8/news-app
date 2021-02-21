@@ -31,12 +31,21 @@ function App() {
   };
 
   const SearchResults = ({ results, index }) =>
-    results.map((result) => (
-      <div key={`result-${index}`} className="articles">
-        <h2>{result.name}</h2>
-        <Articles articles={result.response.results} />
-      </div>
-    ));
+    results.map((result) => {
+      const groupedResults = [];
+      Object.entries(result).forEach(([key, articles]) => {
+        groupedResults.push(
+          <div>
+            <h2>{key}</h2>
+            <div key={`result-${index}`} className="articles">
+              <h2>{results.name}</h2>
+              <Articles articles={articles} />
+            </div>
+          </div>
+        );
+      });
+      return groupedResults;
+    });
 
   return (
     <div className="app">

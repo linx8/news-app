@@ -28,9 +28,9 @@ const searchMultipleArticles = async (keywords) => {
     )
   );
 
-  //const groomedResults = aggregateArticles(combinedResponse)
+  const groupedResults = utils.groupArticlesByCategory(combinedResponse);
 
-  return combinedResponse;
+  return groupedResults;
 };
 
 exports.searchMultipleArticles = searchMultipleArticles;
