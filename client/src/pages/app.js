@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchForm from "../components/search-form";
-import { searchArticles } from "../utils/articleSearch";
+import { searchArticles } from "../utils/api";
 import "../styles/style.css";
 import Articles from "../components/articles";
 
@@ -12,7 +12,6 @@ function App() {
   const fetchResults = async (searchTerms) => {
     updateFetching(true);
     const response = await searchArticles(searchTerms);
-    console.log(response);
     response && updateResults(response);
     updateFetching(false);
   };
@@ -31,9 +30,9 @@ function App() {
     }
   };
 
-  const SearchResults = ({ results }) =>
+  const SearchResults = ({ results, index }) =>
     results.map((result) => (
-      <div className="articles">
+      <div key={`result-${index}`} className="articles">
         <h2>{result.name}</h2>
         <Articles articles={result.response.results} />
       </div>

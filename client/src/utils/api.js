@@ -1,4 +1,4 @@
-// Searches the endpoint
+// Searches the article endpoint on server
 const searchArticles = async (keywords) => {
   const searchEndpoint = "/api/news-search";
   const response = await fetch(
