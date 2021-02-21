@@ -23,3 +23,12 @@ section {
 .article {
   margin-left: 15px;
 }
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+h4 {
+  text-decoration: underline;
+}
