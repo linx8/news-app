@@ -5,6 +5,7 @@
 }
 
 input {
+  box-sizing: border-box;
   padding: 10px;
   width: 100%;
 }
@@ -17,4 +18,8 @@ button {
 
 section {
   padding: 20px 0;
+}
+
+.article {
+  margin-left: 15px;
 }

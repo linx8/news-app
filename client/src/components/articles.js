@@ -1,11 +1,11 @@
 import React from "react";
 
-const ArticleResults = ({ articles }) => {
+const Articles = ({ articles }) => {
   return articles.map((article) => (
     <div key={`article-${article.id}`} className="article">
-      <h2>{article.webTitle}</h2>
+      <h4>{article.webTitle}</h4>
     </div>
   ));
 };
 
-export default ArticleResults;
+export default Articles;
