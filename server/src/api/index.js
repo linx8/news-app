@@ -33,5 +33,4 @@ const searchMultipleArticles = async (keywords) => {
   return combinedResponse;
 };
 
-exports.searchArticles = searchArticles;
 exports.searchMultipleArticles = searchMultipleArticles;
